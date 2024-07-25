@@ -56,7 +56,7 @@ namespace KGetVersion
             string[] versionParts1 = version.Split(' ');
             string[] versionParts2 = versionParts1[0].Split('.');
             string buildNumber = $"{versionParts2[2]}-{versionParts2[3]}";
-            Console.WriteLine($"[|] {type} - {version} - {type}_{buildNumber}");
+            Console.WriteLine($"[|] {type}_{buildNumber} - {version}");
             getAwfsets(buildNumber, type);
         }
 
@@ -75,7 +75,7 @@ namespace KGetVersion
         static void getAwfsets(string buildNumber, string type)
         {
             string typeCap = ToUpperFirstLetter(type);
-            string baseUrl = $"https://raw.githubusercontent.com/wavestone-cdt/EDRSandblast/master/Offsets/{typeCap}Offsets.csv";
+            string baseUrl = $"https://raw.githubusercontent.com/deletehead/KGetVersion/master/offsets.csv";
             //Console.WriteLine($"[>] Requesting {baseUrl}...");
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(baseUrl);
@@ -87,13 +87,18 @@ namespace KGetVersion
                 {
                     string csvContent = reader.ReadToEnd();
                     string[] lines = csvContent.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-
+                    bool found = false;
                     foreach (string line in lines)
                     {
                         if (line.StartsWith($"{type}_{buildNumber}."))
                         {
+                            found = true;
                             Console.WriteLine($"[+] {typeCap} offset! - {line}");
                         }
+                    }
+                    if (!found)
+                    {
+                        Console.WriteLine("[-] Version not found...check the version manually.");
                     }
                 }
             }
