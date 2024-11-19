@@ -1,6 +1,7 @@
 ntoskrnlVersion,PspCreateProcessNotifyRoutine,PspCreateThreadNotifyRoutine,PspLoadImageNotifyRoutine,_EPROCESS_Protection,EtwThreatIntProvRegHandle,_ETW_REG_ENTRY_GuidEntry,_ETW_GUID_ENTRY_ProviderEnableInfo,PsProcessType,PsThreadType,_OBJECT_TYPE_CallbackList,SeCiCallbacks
 ntoskrnl_20348-2760.exe,d00140,cfff40,cffd40,87a,c221e0,20,60,d107d8,d10800,c8,c25c00
 ntoskrnl_14393-7513.exe,33df60,33dd60,33db60,6ca,2fd858,20,50,3aa250,3aa280,c8,301080,0,232
+ntoskrnl_17763-6530.exe,4d9b00,4d9700,4d9900,6ca,40a438,20,60,5412d0,5412f8,c8,40dc20,0,232
 ntoskrnl_10240-16384.exe,35d2e0,35d0e0,35cee0,6aa,0,20,50,3c51e8,3c5200,c8,31ee80
 ntoskrnl_10240-17071.exe,35d420,35d220,35d020,6aa,0,20,50,3c51e8,3c5200,c8,31ef40
 ntoskrnl_10240-17113.exe,35d420,35d220,35d020,6aa,0,20,50,3c51e8,3c5200,c8,31ef40
